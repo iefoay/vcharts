@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>weicharts examples</title>
+    <script type="text/javascript" src="../weicharts/weicharts.js"></script>
+    <script type="text/javascript">
+
+        var chartData =
+                [
+                    {
+                        date: "2011-12-13",
+                        f: "27",
+                        w: "87"
+                    },
+                    {
+                        date: "2011-12-14",
+                        f: "7",
+                        w: "57"
+                    },
+                    {
+                        date: "2011-12-15",
+                        f: "67",
+                        w: "47"
+                    }
+                ];
+
+
+        var chartConfig =
+        {
+            backgroundColor: "#ccffff",
+            colors: ["#ff0033", "#ffcc00", "#cc00ff", "#a3d675"],
+            categoryKey: "date",
+            title: {
+                text: "微博人脉"
+            },
+            plot: {
+                backgroundColor: "#EEF7FD",
+                backgroundAlpha: 1
+            },
+            graphs: [
+                {
+                    name: "粉丝数",
+                    valueKey: "f",
+                    type: "bar"
+                },
+                {
+                    name: "微博数",
+                    valueKey: "w",
+                    type: "bar"
+                }
+            ],
+            valueAxes: [
+                {
+                    unit: "个",
+                    gridCount: 5
+                }
+            ],
+            tooltip: {
+                backgroundColor: "",
+                text: ""
+            }
+        };
+
+		var chart = new weicharts.SerialChart("chartdiv");
+		chart.setData(chartData);
+		chart.setSize(500, 300);
+		chart.setConfig(chartConfig);
+
+    </script>
+</head>
+
+<body>
+
+<div id="chartdiv"/>
+<button id="">click</button>
+
+</body>
+
+</html>
