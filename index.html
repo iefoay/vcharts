@@ -31,15 +31,46 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h1>weicharts</h1>
+        <h1>
+<a name="weicharts" class="anchor" href="#weicharts"><span class="octicon octicon-link"></span></a>weicharts</h1>
 
-<h2>创建图表</h2>
+<p>使用简单的javascript代码，将数据图形化的图表。</p>
 
-<h2>数据</h2>
+<h2>
+<a name="%E5%88%9B%E5%BB%BA%E5%9B%BE%E8%A1%A8" class="anchor" href="#%E5%88%9B%E5%BB%BA%E5%9B%BE%E8%A1%A8"><span class="octicon octicon-link"></span></a>创建图表</h2>
 
-<h2>尺寸</h2>
+<p>目前已经完成了常用的饼图（PieChart）、序列图（SerialChart）类型的图表。</p>
 
-<h2>样式</h2>
+<h3>
+<a name="%E9%A5%BC%E5%9B%BE" class="anchor" href="#%E9%A5%BC%E5%9B%BE"><span class="octicon octicon-link"></span></a>饼图</h3>
+
+<p>描述单项占全部百分比</p>
+
+<h3>
+<a name="%E5%BA%8F%E5%88%97%E5%9B%BE" class="anchor" href="#%E5%BA%8F%E5%88%97%E5%9B%BE"><span class="octicon octicon-link"></span></a>序列图</h3>
+
+<p>比较一个序列项的数据，如曲线图、柱状图及其混合</p>
+
+<pre><code>var chart = new weicharts.PieChart("chartdiv");
+</code></pre>
+
+<h2>
+<a name="%E6%95%B0%E6%8D%AE" class="anchor" href="#%E6%95%B0%E6%8D%AE"><span class="octicon octicon-link"></span></a>数据</h2>
+
+<pre><code>chart.setData(chartData);
+</code></pre>
+
+<h2>
+<a name="%E5%B0%BA%E5%AF%B8" class="anchor" href="#%E5%B0%BA%E5%AF%B8"><span class="octicon octicon-link"></span></a>尺寸</h2>
+
+<pre><code>chart.setSize(500, 300);
+</code></pre>
+
+<h2>
+<a name="%E6%A0%B7%E5%BC%8F" class="anchor" href="#%E6%A0%B7%E5%BC%8F"><span class="octicon octicon-link"></span></a>样式</h2>
+
+<pre><code>chart.setConfig(chartConfig);
+</code></pre>
       </section>
     </div>
 
