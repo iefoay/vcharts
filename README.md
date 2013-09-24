@@ -1,4 +1,4 @@
-# weicharts
+# VCharts
 
 使用简单的javascript代码，将数据图形化的图表。
 
@@ -11,26 +11,26 @@
 比较一个序列项的数据，如曲线图、柱状图及其混合
 
 ````
-var chart = new weicharts.PieChart("chartdiv");
+var chart = new vcharts.Pie("chartdiv");
 ````
 
 ## 数据
 
 ````
-chart.setData(chartData);
+chart.data(chartData);
 ````
 
 ## 尺寸
 
 ````
-chart.setSize(500, 300);
+chart.size(500, 300);
 ````
 
 
 ## 样式
 
 ````
-chart.setConfig(chartConfig);
+chart.config(chartConfig);
 ````
 
 
