@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>weicharts examples</title>
-    <script type="text/javascript" src="../weicharts/weicharts.js"></script>
+    <script type="text/javascript" src="../js/vcharts.js"></script>
     <script type="text/javascript">
 
         var chartData =
@@ -28,11 +28,11 @@
 
         var chartConfig =
         {
-            backgroundColor: "#ccffff",
-            colors: ["#ff0033", "#ffcc00", "#cc00ff", "#a3d675"],
-            categoryKey: "date",
+//            backgroundColor: "#ccffff",
+//            colors: ["#ff0033", "#ffcc00", "#cc00ff", "#a3d675"],
+            serialKey: "date",
             title: {
-                text: "微博人脉"
+                text: "我的微博"
             },
             plot: {
                 backgroundColor: "#EEF7FD",
@@ -62,18 +62,15 @@
             }
         };
 
-		var chart = new weicharts.SerialChart("chartdiv");
-		chart.setData(chartData);
-		chart.setSize(500, 300);
-		chart.setConfig(chartConfig);
-
+            var chart = new weicharts.SerialChart("chartdiv");
+            chart.setData(chartData);
+            chart.setConfig(chartConfig);
     </script>
 </head>
 
 <body>
 
-<div id="chartdiv"/>
-<button id="">click</button>
+	<div id="chartdiv"></div>
 
 </body>
 
