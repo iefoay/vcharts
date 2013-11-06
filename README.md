@@ -1,30 +1,10 @@
-# VCharts
-
-vcharts是一套JavaScript实现的图表库。仅使用很少的代码，就能使数据图形化。
-目前为测试阶段，已经完成了常用的饼图（PieChart）、序列图（SerialChart）类型的图表。
+# 新手入门
 
 ## 引入vcharts.js
-只需要vcharts.js
 
 	<script type="text/javascript" src="/your/path/vcharts.js"></script>
 
 ## 创建图表
-
-vcharts按轴的不同分为以下几种图表
-
-**序列图**
-以一个序列为统一轴来展示数据，我们常见的柱状图、曲线图、面积图及其混合图都属于这种类型的图表。创建方法如下：
-
-`new vcharts.SerialChart("mychartdiv");`
-
-`vcharts.SerialChart`表示这是一个序列图表，`"mychartdiv"`为此图表在HTML中的div容器，。
-
-*提示：*不必在window.load之后操作，vcharts内部已经帮你做了兼容。
-
-**饼图**
-描述单项占全部百分比，创建方法如下：
-
-`new vcharts.PieChart("chartdiv");`
 
 这里我们创建一个序列图为例
 
@@ -35,7 +15,8 @@ vcharts按轴的不同分为以下几种图表
 接下来给它添加数据了。
 
 ## 数据
-vcharts的数据为json数组表示，这里是一个简单的例子。
+
+vcharts的数据为json数组表示，这里只是一个简单的例子，请按格式改为自己的实际数据。
 
 	mychart.setData([{
 			label:"1月",
@@ -48,31 +29,33 @@ vcharts的数据为json数组表示，这里是一个简单的例子。
 			value:"39"
 		}]);
 
-这时刷新页面，数据图表就显示出来了。
+这时刷新页面，不出差错，我们就已经完成了第一个数据图表的创建了。是不是很简单？
 
 
 ## 配置
 
-vcharts中的数据和其配置是一对好兄弟。配置用于设置如何显示数据，表示序列的key。
+每个图表内部都有一个默认的配置表。新增加的配置会被合并到已有的配置上。所以只设置需要修改的那部分，如：
 
-内部有一个默认的配置表。只设置其特殊部分即可，它们会被合并到已有的配置上。
+**修改标题**
 
 	mychart.setConfig({
 		title : {
-			name : "标题"
-		},
-		serialKey : 'label',
+			name : "修改后的标题"
+		}
+	});
+	
+
+**修改单项图形**
+
+	mychart.setConfig({
 		graphs : [{
-			name : "销售量",
-			valueKey : "value"
+			name : "修改后的单项名称",
+			type : "column"	//将此图形显示为柱状图
 		}]
 	});
 	
-完整配置表及详细说明请查看
+完整配置表及详细说明请查看[完整配置](http://vcharts.cn)
 
-## 尺寸
-vcharts接受三种方式设置尺寸，优先级最高的是通过setSize(width, height)设置：
+## 改变尺寸
 
 	mychart.setSize(500, 300);
-
-如未用此方法设置，读取css样式上的尺寸。若css样式也未设置，则使用默认大小。
