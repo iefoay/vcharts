@@ -1,143 +1,187 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="VCharts : 免费、易用的Web数据图表" />
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>vcharts by iefoay</title>
+    <title>VCharts</title>
   </head>
 
   <body>
-    <header>
-      <div class="inner">
-        <h1>vcharts</h1>
-        <h2>跨平台图表</h2>
-        <a href="https://github.com/iefoay/vcharts" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>
-<a name="vcharts" class="anchor" href="#vcharts"><span class="octicon octicon-link"></span></a>VCharts</h1>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/iefoay/vcharts">View on GitHub</a>
 
-<p>vcharts是一套JavaScript实现的图表库。仅使用很少的代码，就能使数据图形化。
-目前为测试阶段，已经完成了常用的饼图（PieChart）、序列图（SerialChart）类型的图表。</p>
+          <h1 id="project_title">VCharts</h1>
+          <h2 id="project_tagline">免费、易用的Web数据图表</h2>
 
-<h2>
-<a name="%E5%BC%95%E5%85%A5vchartsjs" class="anchor" href="#%E5%BC%95%E5%85%A5vchartsjs"><span class="octicon octicon-link"></span></a>引入vcharts.js</h2>
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/iefoay/vcharts/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/iefoay/vcharts/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
 
-<p>只需要vcharts.js</p>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>vcharts是一套JavaScript实现的Web图表库，由SVG+VML的技术实现。使用简单。</p>
 
-<pre><code>&lt;script type="text/javascript" src="/your/path/vcharts.js"&gt;&lt;/script&gt;
-</code></pre>
+<p>目前为测试阶段，饼图（PieChart）和序列图（SerialChart）已经可以使用，最新动态请关注微博<a href="http://weibo.com/1452085277">@vcharts</a>。</p>
 
 <h2>
-<a name="%E5%88%9B%E5%BB%BA%E5%9B%BE%E8%A1%A8" class="anchor" href="#%E5%88%9B%E5%BB%BA%E5%9B%BE%E8%A1%A8"><span class="octicon octicon-link"></span></a>创建图表</h2>
+<a name="%E7%89%B9%E7%82%B9" class="anchor" href="#%E7%89%B9%E7%82%B9"><span class="octicon octicon-link"></span></a>特点</h2>
+
+<ul>
+<li>使用简单</li>
+<li>数据和显示逻辑分离</li>
+<li>自适应尺寸</li>
+</ul><h2>
+<a name="%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9" class="anchor" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9"><span class="octicon octicon-link"></span></a>浏览器兼容</h2>
+
+<p><strong>桌面平台</strong></p>
+
+<ul>
+<li>IE 5+</li>
+<li>Firefox 3+</li>
+<li>Chrome 4+</li>
+<li>Safari 4+</li>
+<li>Opera 9+</li>
+</ul><p><strong>移动平台</strong></p>
+
+<ul>
+<li>Safari</li>
+<li>Android Browser 3+</li>
+<li>Chrome</li>
+<li>Firefox</li>
+<li>IE</li>
+<li>Opera</li>
+<li>Blackberry</li>
+</ul><h2>
+<a name="%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" class="anchor" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="octicon octicon-link"></span></a>使用方法</h2>
+
+<h3>
+<a name="%E5%88%9B%E5%BB%BA" class="anchor" href="#%E5%88%9B%E5%BB%BA"><span class="octicon octicon-link"></span></a>创建</h3>
 
 <p>vcharts按轴的不同分为以下几种图表</p>
 
 <p><strong>序列图</strong>
 以一个序列为统一轴来展示数据，我们常见的柱状图、曲线图、面积图及其混合图都属于这种类型的图表。创建方法如下：</p>
 
-<p><code>new vcharts.SerialChart("mychartdiv");</code></p>
-
-<p><code>vcharts.SerialChart</code>表示这是一个序列图表，<code>"mychartdiv"</code>为此图表在HTML中的div容器，。</p>
-
-<p><em>提示：</em>不必在window.load之后操作，vcharts内部已经帮你做了兼容。</p>
+<pre><code>var mychart = new vcharts.SerialChart("mychartdiv");
+</code></pre>
 
 <p><strong>饼图</strong>
 描述单项占全部百分比，创建方法如下：</p>
 
-<p><code>new vcharts.PieChart("chartdiv");</code></p>
-
-<p>这里我们创建一个序列图为例</p>
-
-<pre><code>var mychart = new vcharts.SerialChart("mychartdiv");
+<pre><code>var mychart = new vcharts.PieChart("mychartdiv");
 </code></pre>
 
-<p>这时在html页面里应该能看到vcharts提示<strong>no data</strong>字样，说明已经成功创建了一个图表，如果没有看到提示，请检查是否引入了vcharts.js库文件，及路径是否正确。</p>
+<ul>
+<li>
+<code>vcharts.SerialChart</code>表示这是一个序列图表，</li>
+<li>参数是HTML中的div容器。这里是通过其id的方式，如：<code>"mychartdiv"</code>；也可以通过元素对象的方式，不过要确保此元素载入之后才能访问。</li>
+</ul><h3>
+<a name="%E6%96%B9%E6%B3%95" class="anchor" href="#%E6%96%B9%E6%B3%95"><span class="octicon octicon-link"></span></a>方法</h3>
 
-<p>接下来给它添加数据了。</p>
+<p><strong>setData(data)</strong></p>
+
+<ul>
+<li>data：数据为json数组表示</li>
+</ul><p>return：该图表</p>
+
+<p><strong>setConfig(config)</strong></p>
+
+<ul>
+<li>config：数据为json数组表示</li>
+</ul><p>return：该图表</p>
+
+<p><strong>setSize(width, height)</strong></p>
+
+<ul>
+<li>width：设置图表宽度</li>
+<li>height：设置图表高度</li>
+</ul><p>return：该图表</p>
 
 <h2>
-<a name="%E6%95%B0%E6%8D%AE" class="anchor" href="#%E6%95%B0%E6%8D%AE"><span class="octicon octicon-link"></span></a>数据</h2>
+<a name="%E6%95%B0%E6%8D%AE%E6%A0%B7%E4%BE%8B" class="anchor" href="#%E6%95%B0%E6%8D%AE%E6%A0%B7%E4%BE%8B"><span class="octicon octicon-link"></span></a>数据样例</h2>
 
-<p>vcharts的数据为json数组表示，这里是一个简单的例子。</p>
+<p>使用json数组，饼图和单条序列图都可以使用如下格式：</p>
 
-<pre><code>mychart.setData([{
-        label:"1月",
-        value:"23"
-    },{
-        label:"2月",
-        value:"26"
-    },{
-        label:"3月",
-        value:"39"
-    }]);
+<pre><code>[{label:"1月", value:"23"}, {label:"2月", value:"26"}, ...]
 </code></pre>
 
-<p>这时刷新页面，数据图表就显示出来了。</p>
+<p>不同的图表可能在单元数据项中不太一样，如：</p>
+
+<p><strong>多条序列</strong></p>
+
+<pre><code>｛label:"1月", value1:"22", value2:"33"｝
+</code></pre>
+
+<p><em>其它样例会随后面的版本一起推出，敬请关注</em></p>
 
 <h2>
-<a name="%E9%85%8D%E7%BD%AE" class="anchor" href="#%E9%85%8D%E7%BD%AE"><span class="octicon octicon-link"></span></a>配置</h2>
+<a name="%E9%85%8D%E7%BD%AE%E6%A0%B7%E4%BE%8B" class="anchor" href="#%E9%85%8D%E7%BD%AE%E6%A0%B7%E4%BE%8B"><span class="octicon octicon-link"></span></a>配置样例</h2>
 
-<p>vcharts中的数据和其配置是一对好兄弟。配置用于设置如何显示数据，表示序列的key。</p>
+<p>这里我们完整的配置表，用于参考</p>
 
-<p>内部有一个默认的配置表。只设置其特殊部分即可，它们会被合并到已有的配置上。</p>
+<p><strong>饼图</strong></p>
 
-<pre><code>mychart.setConfig({
+<pre><code>{
     title : {
         name : "标题"
     },
-    serialKey : 'label',
+    colors : ["#EE3300", "#FFD300", "#99DD33"],
+    labelKey : "label",
+    valueKey : "value"
+}
+</code></pre>
+
+<p><strong>序列图</strong></p>
+
+<pre><code>{
+    title : {
+        name : "标题"
+    },
+    colors : ["#EE3300", "#FFD300", "#99DD33"],
+    serialKey : "label",
     graphs : [{
         name : "销售量",
         valueKey : "value"
     }]
-});
+}
 </code></pre>
 
-<p>完整配置表及详细说明请查看</p>
+<p>在下载到的压缩包中，我们将具体的实例放到了samples文件夹中。建议通过那里进行可视化图形来掌握配置信息。</p>
 
 <h2>
-<a name="%E5%B0%BA%E5%AF%B8" class="anchor" href="#%E5%B0%BA%E5%AF%B8"><span class="octicon octicon-link"></span></a>尺寸</h2>
+<a name="%E5%85%B3%E4%BA%8E%E5%B0%BA%E5%AF%B8" class="anchor" href="#%E5%85%B3%E4%BA%8E%E5%B0%BA%E5%AF%B8"><span class="octicon octicon-link"></span></a>关于尺寸</h2>
 
-<p>vcharts接受三种方式设置尺寸，优先级最高的是通过setSize(width, height)设置：</p>
+<p>vcharts自动按优先级接受以下三种方式设置的尺寸</p>
 
-<pre><code>mychart.setSize(500, 300);
-</code></pre>
-
-<p>如未用此方法设置，读取css样式上的尺寸。若css样式也未设置，则使用默认大小。</p>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/iefoay/vcharts/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/iefoay/vcharts/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/iefoay/vcharts"></a> is maintained by <a href="https://github.com/iefoay">iefoay</a>.</p>
-
-          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+<ul>
+<li><p>优先级最高的是通过 <strong>setSize(width, height)</strong> 设置</p></li>
+<li><p>若未使用此方法设置，则读取css样式上的尺寸。</p></li>
+<li><p>若css样式也未设置，则使用默认大小（400*300）。</p></li>
+</ul>
+      </section>
     </div>
 
-  
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">VCharts maintained by <a href="https://github.com/iefoay">iefoay</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
   </body>
 </html>
