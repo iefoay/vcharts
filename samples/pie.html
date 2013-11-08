@@ -3,18 +3,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>vcharts examples</title>
-    <script type="text/javascript" src="http://127.0.0.1:8088/"></script>
+    <script type="text/javascript" src="../js/vcharts.js"></script>
 	<script type="text/javascript">
-		
-		var chartConfig = 
-		{
-			title: {
-				text:	"我的微博"
-			}/*,
-            graph: {
-                radius: 50
-            }*/
-		};
 		
 		var chartData = 
 		[{
@@ -31,19 +21,12 @@
 		var chart = new vcharts.PieChart("chartdiv");
 		chart.setSize(460, 280);
 		chart.setData(chartData);
-		chart.setConfig(chartConfig);
-
-//            weicharts.Pie("div").data(data);
-//            weicharts.Pie("div").size(460, 280).data(data).config(config);
-//            weicharts.Serial("div").data([{l:"a",v:3}, {}])
-//            .config({valueKey:"v",labelKey:"l",reverse:true})
-//			.graph({})
-//
-//
-//            .size(460, 280)
-//            weicharts.Serial("div").setData(data).config(config);
-//            weicharts.XY("div").data([{l:"a",v:3}, {}]);
-//            chart.appendData({} || [{},{}]);
+		chart.setConfig({
+			title: {
+				text:	"我的微博"
+			}
+		});
+		
 	</script>
 </head>
 

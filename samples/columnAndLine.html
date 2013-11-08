@@ -29,15 +29,9 @@
 
 		var chartConfig = 
 		{
-//			backgroundColor: "#ffffff",
-//			colors:	["#ff0033", "#ffcc00", "#cc00ff", "#a3d675"],
-			serialKey:	"label",
+			colors:	["#ff0033", "#ffcc00", "#cc00ff", "#a3d675"],
 			title: {
 				text:		"我的微博"
-			},
-			plot: {
-				backgroundColor:	"#EEF7FD",
-				backgroundAlpha:	1
 			},
 			graphs: [{
 				name:		"粉丝数",
@@ -51,23 +45,14 @@
 				name:		"粉丝数",
 				valueKey:	"g",
 				type:		"column"
-			}],
-			valueAxes: [{
-				unit:		"个",
-				gridCount:	5
-			}],
-			tooltip: {
-				backgroundColor: "#ffffff",
-				text: ""
-			}
+			}]
 		};
 
-//		window.onload = function () {
 		var chart = new vcharts.SerialChart("chartdiv");
 		chart.setSize(400, 300);
 		chart.setData(chartData);
 		chart.setConfig(chartConfig);
-//		}
+		
 	</script>
 </head>
 

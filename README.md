@@ -2,7 +2,7 @@ vcharts是一套JavaScript实现的Web图表库，由SVG+VML的技术实现。
 
 官方网站：[vcharts.cn](http://vcharts.cn)
 
-[Wiki](https://github.com/iefoay/vcharts/wiki)
+Github上的[Wiki](https://github.com/iefoay/vcharts/wiki)
 
 最新动态尽在新浪微博：[@vcharts](http://weibo.com/1452085277)
 
