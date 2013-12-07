@@ -9,41 +9,46 @@
 		var chartData =
 		[
 			{
-			    date: "2011-12-13",
-			    f: "27",
-			    w: "87"
+			    label: "第一季度",
+			    f: 27,
+			    value2: 13
 			},
 			{
-			    date: "2011-12-14",
-			    f: "7",
-			    w: "57"
+			    label: "第二季度",
+			    f: 37,
+			    value2: 21
 			},
 			{
-			    date: "2011-12-15",
-			    f: "67",
-			    w: "47"
+			    label: "第三季度",
+			    f: 57,
+			    value2: 33
+			},
+			{
+			    label: "第四季度",
+			    f: 88,
+			    value2: 97
 			}
 		];
 
 
 		var chartConfig =
 		{
-			serialKey: "date",//对应数据中表示序列的key
 			title: {
-			    text: "我的微博"
+			    text: "年度业绩"
 			},
 			graphs: [{
-			    name: "粉丝数",
+			    name: "部门1",
 			    valueKey: "f",//对应数据中的key
-			    type: "bar"
+			    type: "column"
 			}, {
-			    name: "微博数",
-			    valueKey: "w",//对应数据中的key
-			    type: "bar"
+			    name: "部门2",
+			    valueKey: "value2",//对应数据中的key
+			    type: "column"
 			}]
 		};
 
 		var chart = new vcharts.SerialChart("chartdiv");
+		chart.setSize(500, 300);
 		chart.setData(chartData);
 		chart.setConfig(chartConfig);
 	</script>
