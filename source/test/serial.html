@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>vcharts examples</title>
+
+    <script type="text/javascript" src="http://127.0.0.1:8088/"></script>
+	<script type="text/javascript">
+
+		var chartData =
+		[{
+			    label: "一月",
+			    f: '27',
+			    value2: '13'
+			},{
+			    label: "二月",
+			    f: '37',
+			    value2: 21
+			}
+		];
+		
+
+		var chartConfig = 
+		{
+//			backgroundColor: "#ffffff",
+			serialKey:	"label",
+			title: {
+				text:		"我的微博"
+			},
+			plot: {
+				backgroundColor:	"#EEF7FD",
+				backgroundAlpha:	1
+			},
+			graphs: [{
+				name:		"粉丝数",
+				valueKey:	"f",
+				type:		"line"
+			},{
+				name:		"粉丝数",
+				valueKey:	"value2",
+				type:		"line"
+			}],
+			valueAxes: [{
+				unit:		"个",
+				gridCount:	5
+			}],
+			tooltip: {
+				backgroundColor: "#ffffff",
+				text: ""
+			}
+		};
+
+		window.onload = function () {
+		var chart = new vcharts.SerialChart("chartdiv");
+		chart.setSize(400, 300);
+		chart.setData(chartData);
+		chart.setConfig(chartConfig);
+		}
+
+
+//setTimeout(function(){chart.setData(chartData);}, 2000);
+	</script>
+</head>
+
+<body>
+	<div id="chartdiv" style='border:solid #666;background:#eee;width:100%;height:300px;'></div>
+</body>
+
+</html>
